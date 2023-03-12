@@ -1,0 +1,19 @@
+{{ $json := .Files.Get "test.json" | fromJson }}
+#JSON:{{- . }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "test-pod"
+  annotations:
+    "helm.sh/hook": test
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      {{- range $json.testJSON }}
+      - name: test-pod-{{- .name }}
+        image: busybox
+        command: ["wget", "-T", "5" ,"-O", "/dev/null",  "svc-pod-{{- .name }}"]
+      {{- end }}
+      restartPolicy: Never

@@ -1,0 +1,5 @@
+json:
+{{- $.Values.testJSON }}
+
+yaml:
+{{- $.Values.testJSON | toYaml }}

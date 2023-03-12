@@ -1,0 +1,15 @@
+testJSON:
+  pod_a:
+    name: yaml-a
+    type: yaml-one
+    labels:
+      - yaml-foo
+      - yaml-bar
+      - yaml-buz
+  pod_b:
+    name: yaml-b
+    type: yaml-two
+    labels:
+      - yaml-hoge
+      - yaml-huga
+      - yaml-piyo

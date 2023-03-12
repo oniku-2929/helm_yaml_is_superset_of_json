@@ -1,0 +1,29 @@
+{
+    "testJSON": {
+        "pod_a": {
+            "name": "a",
+            "type": "one",
+            "labels": [
+                "foo",
+                "bar",
+                "buz"
+            ]
+        },
+        "pod_b": {
+            "name": "b",
+            "type": "two",
+            "labels": [
+                "hoge",
+                "huga",
+                "piyo"
+            ]
+        },
+        "pod_c": {
+            "name": "c",
+            "type": "three"
+        },
+        "pod_d": {
+            "name": "d"
+        }
+    }
+}
