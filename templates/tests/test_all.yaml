@@ -1,5 +1,3 @@
-{{ $json := .Files.Get "test.json" | fromJson }}
-#JSON:{{- . }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -11,6 +9,7 @@ spec:
   template:
     spec:
       containers:
+      {{- $json := $.Files.Get "test.json" | fromJson }}
       {{- range $json.testJSON }}
       - name: test-pod-{{- .name }}
         image: busybox
